@@ -1,0 +1,11 @@
+<h1>Courses#index</h1>
+<p>Find me in app/views/courses/index.html.erb</p>
+
+<% @courses.each do |course| %>
+
+  <li>
+    <%= link_to course.title, show_course_path(id:course)%>
+    <%= course.title %>
+  </li>
+
+<%end%>
