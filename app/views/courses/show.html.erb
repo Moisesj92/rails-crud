@@ -3,7 +3,9 @@
 <p> <%=@course.description%> </p>
 
 <%= link_to 'editar', edit_course_path(id:@course.id)%>
-<%= link_to 'eliminar', course_path(id:@course.id)%>
+
+
+<%= button_to "eliminar", @course, method: :delete %>
 
 <%= link_to 'volver a la lista', courses_path%>
 
