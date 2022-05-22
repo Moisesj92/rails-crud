@@ -1,3 +1,9 @@
 <h2> <%=@course.title%> </h2>
 
+<p> <%=@course.description%> </p>
+
+<%= link_to 'editar', edit_course_path(id:@course.id)%>
+<%= link_to 'eliminar', course_path(id:@course.id)%>
+
 <%= link_to 'volver a la lista', courses_path%>
+

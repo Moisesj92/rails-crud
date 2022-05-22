@@ -1,16 +1,4 @@
 <h1>Course#new</h1>
 <p>Find me in app/views/course/new.html.erb</p>
 
-
-
-<%= form_with model:@course do |form|%>
-
-  <%= form.label 'title'%>
-  <%= form.text_field :title%>
-
-  <%= form.label 'visible?'%>
-  <%= form.check_box :visible%>
-
-  <%= form.submit "Crear Curso"%>
-
-<%end%>
+<%= render partial:'form' locals:{message: 'Crear'}%>

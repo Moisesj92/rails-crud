@@ -1,0 +1,24 @@
+<%= form_with model:@course do |form|%>
+
+  <div>
+    <%= form.label 'title'%>
+    <%= form.text_field :title%>
+  </div>
+  <div>
+    <%= form.label 'Description'%>
+    <%= form.text_area :description, placeholder:'Describe brevemente de que se trata el nuevo curso'%>
+  </div>
+  <div>
+    <%= form.label 'published?'%>
+    <%= form.check_box :visible%>
+  </div>
+  <div>
+    <%= form.label 'visible?'%>
+    <%= form.check_box :visible%>
+  </div>
+  
+  <div>
+    <%= form.submit "#{message} Curso"%>
+  </div>
+
+<%end%>
