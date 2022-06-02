@@ -57,37 +57,34 @@ Adicionalmente en este proyecto usamos docker para los contenedores que emulan e
   `variable1.save`
 ### CONTROLADORES
 
-  Los controladores son quienes resuelven la peticion, el comando para generar el controlador es:
+  Los controladores son quienes resuelven la petición, el comando para generar el controlador es:
 
   `rails generate (nombre del controlador que se asocia al modelo en plural) (acciones)`
 
   dentro de acciones puedes colocar (index new) por ejemplo
 
-  
+  dentro del controlador en el método index se pueden definir variables de instancia, 
+  recordemos que las variables de instancia se define con @variable y esta variable la tendremos directamente en la vista,
+  en la cual podremos acceder de la misma manera (@variable) y trabajar con ella por ejemplo haciendo un each para mostrar todos los registros.
+
+  ``` [ruby]
+  def index
+    @courses = Course.all
+  end
+  ```
+
+  ``` [ruby]
+  <% @courses.each do |course| %>
+
+    <li>
+      <%= link_to course.title, show_course_path(id:course)%>
+      <%= course.title %>
+    </li>
+
+  <%end%>
+  ```
+
 
 ### FORMULARIOS
 
 ### STRONG PARAMS
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
