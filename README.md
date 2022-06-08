@@ -84,7 +84,19 @@ Adicionalmente en este proyecto usamos docker para los contenedores que emulan e
   <%end%>
   ```
 
-
 ### FORMULARIOS
 
+  Los formularios en rails se crean con la etiqueta form_with, existen otras etiquetas que puedes usar en caso de que tu formulario no tenga
+  relación con un modelo - form_tag, form_with viene siendo una función a la que le pasas parámetros, en rails los paréntesis son opcionales
+
+  siempre que un formulario sea enviado al rails en el controlador existirá uns variable params que recibe todos los datos del formulario enviado
+
 ### STRONG PARAMS
+
+  Los strong params son un mecanismo que nos permite limitar cuales son los atributos que se pueden recibir mediante los formularios
+
+  ``` [ruby]
+  def course_params
+    params.required(:course).permit(:title, :description, :published, :visible)
+  end
+  ```
